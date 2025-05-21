@@ -116,8 +116,7 @@ hw_close:
     POP {r4, lr}
     BX lr
 
-@ void hw_send_all(*params)
-@ params = {int8_t* a, int8_t* b, uint32_t opcode, uint32_t size, uint32_t scalar}
+@verificar se vai funcionar com 5 parâmetros
 hw_send_all:
     PUSH {r4-r12, lr}
 
@@ -187,7 +186,6 @@ hw_delay_loop:
     BNE hw_delay_loop
     BX lr
 
-@ void hw_read_all(int8_t* result, uint8_t* overflow_flag)
 hw_read_all:
     PUSH {r4-r7, lr}
 
@@ -212,8 +210,7 @@ hw_read_all:
     POP {r4-r7, lr}
     BX lr
 
-@ void hw_sync_send(uint32_t value, uint32_t type)
-@ Envia valor com handshake
+@ Envia valor com sincronização
 hw_sync_send:
     PUSH {r1-r4, lr}
 
@@ -241,8 +238,7 @@ hw_sync_send:
     POP {r1-r4, lr}
     BX lr
 
-@ void hw_sync_recv(uint8_t* result, uint8_t* overflow_flag)
-@ Recebe valor com handshake
+@ Recebe valor com sincronização
 hw_sync_recv:
     PUSH {r2-r5, lr}
 
