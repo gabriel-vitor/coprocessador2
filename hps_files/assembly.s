@@ -2,7 +2,7 @@
 
 .section .data
 devmem_path: .asciz "/dev/mem"     @ Caminho para o dispositivo de memória física
-LW_BRIDGE_BASE: .word 0xff200      @ Endereço base da região leve do barramento (LW)
+LW_BRIDGE_BASE: .word 0xff200000      @ Endereço base da região leve do barramento (LW)
 LW_BRIDGE_SPAN: .word 0x1000       @ Tamanho do espaço mapeado (4 KB)
 
 .global data_in_ptr
