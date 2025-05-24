@@ -327,4 +327,3 @@ sync_receive:
 .sync_exit:
     POP {r2-r5, lr}
     BX lr
-
