@@ -41,6 +41,11 @@ A respeito do fluxo de funcionamento, o processador ARM executa uma aplicação 
 Dentro da FPGA, a Unidade de Controle recebe esses dados, realiza o processamento necessário e executa a multiplicação matricial. Após o cálculo, os resultados são disponibilizados na linha DATA_OUT. Em suma, o processador ARM lê os resultados enviados pela FPGA e continua o processamento da aplicação.
 </p>
 
+<p align="center">
+    <img src="images/image1.jpeg" width="600"/>
+    <br/>
+    <b>Figura 1.</b> Representação do fluxo. <b>Fonte:</b> Os autores.
+</p>
 
 ## Hardwares Utilizados
 
@@ -152,19 +157,19 @@ Os elementos das matrizes A e B são preenchidos diretamente no código-fonte em
 <p align="center">
     <img src="images/teste1.png" width="600"/>
     <br/>
-    <b>Figura 1.</b> Testagem do menu interativo do código em C. <b>Fonte:</b> Os autores.
+    <b>Figura 2.</b> Testagem do menu interativo do código em C. <b>Fonte:</b> Os autores.
 </p>
 
 <p align="center">
     <img src="images/teste2.png" width="600"/>
     <br/>
-    <b>Figura 2.</b> Testagem com matrizes 5x5 com multiplicador escalar pré-definido em 2. <b>Fonte:</b> Os autores.
+    <b>Figura 3.</b> Testagem com matrizes 5x5 com multiplicador escalar pré-definido em 2. <b>Fonte:</b> Os autores.
 </p>
 
 <p align="center">
     <img src="images/teste3.png" width="600"/>
     <br/>
-    <b>Figura 3.</b> Testagem com matrizes 5x5 e multiplicação entre matrizes pré-definidas. <b>Fonte:</b> Os autores.
+    <b>Figura 4.</b> Testagem com matrizes 5x5 e multiplicação entre matrizes pré-definidas. <b>Fonte:</b> Os autores.
 </p>
 
 ## Análise dos Resultados
@@ -180,13 +185,13 @@ Entretanto, observou-se que não há um tratamento específico para números neg
 <p align="center">
     <img src="images/teste4.png" width="600"/>
     <br/>
-    <b>Figura 4.</b> Exibição de matriz oposta que mostra valores negativos. <b>Fonte:</b> Os autores.
+    <b>Figura 5.</b> Exibição de matriz oposta que mostra valores negativos. <b>Fonte:</b> Os autores.
 </p>
 
 <p align="center">
     <img src="images/teste5.png" width="600"/>
     <br/>
-    <b>Figura 5.</b> Matriz com resultados negativos ao modificar o escalar no código-fonte (valor em 100). Há overflow. <b>Fonte:</b> Os autores.
+    <b>Figura 6.</b> Matriz com resultados negativos ao modificar o escalar no código-fonte (valor em 100). Há overflow. <b>Fonte:</b> Os autores.
 </p>
 
 ## Conclusão
