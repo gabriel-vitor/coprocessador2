@@ -56,10 +56,18 @@ A placa dispõe de interfaces como GPIOs, LEDs, switches, displays de 7 segmento
 </p>
 
 
-## Software Utilizados
+## Softwares Utilizados
 
 <p align="justify">
-	
+O sistema operacional Linux embarcado é executado no processador HPS da DE1-SoC. Para o desenvolvimento cruzado, utiliza-se Linux Ubuntu no host, suportando a arquitetura ARMv7.
+</p>
+
+<p align="justify">
+O desenvolvimento do hardware é realizado com as ferramentas Intel Quartus II Prime Lite Edition e Platform Designer, que permitem a síntese dos circuitos e a conexão dos módulos FPGA ao HPS. A compilação do software conta com o compilador GCC para ARM (arm-linux-gnueabihf-gcc), o montador GNU Assembler e a ferramenta Make, que automatiza o processo de compilação.	
+</p>
+
+<p align="justify">
+A comunicação entre software e hardware ocorre por meio de chamadas de sistema Linux (open, mmap2, close e munmap) para mapear os registradores da FPGA. O driver /dev/mem permite o acesso direto à memória física. Para controle de versão e gerenciamento do código, utiliza-se Git, com os repositórios hospedados no GitHub.
 </p>
 
 <p align="center">
@@ -67,17 +75,6 @@ A placa dispõe de interfaces como GPIOs, LEDs, switches, displays de 7 segmento
     <br/>
     <b>Figura 2.</b> Lgenda2. <b>Fonte:</b> .
 </p>
-
-<p align="justify">
-	
-</p>
-
-<p align="center">
-    <img src="" width="600"/>
-    <br/>
-    <b>Figura 3.</b> Legenda3. <b>Fonte:</b> .
-</p>
-
 
 ## Biblioteca Assembly
 
