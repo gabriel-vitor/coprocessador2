@@ -191,13 +191,20 @@ Entretanto, observou-se que não há um tratamento específico para números neg
 
 ## Conclusão
 <p align="justify"> 
-  
+O desenvolvimento da biblioteca em Assembly para interação com o coprocessador de multiplicação matricial na plataforma DE1-SoC demonstrou ser uma solução eficiente para aplicações que exigem alto desempenho computacional. A arquitetura proposta possui comunicação eficaz e operação correta das funcionalidades implementadas.
+
 </p> 
 
 <p align="justify">
-  
+A realização dos testes com o programa em C permitiu validar todas as funcionalidades previstas, incluindo o envio de dados, controle das operações aritméticas e leitura dos resultados com detecção de overflow. A automatização do preenchimento das matrizes no código e o uso de um menu interativo simplificaram o processo de verificação do sistema.
+
 </p> 
 
 <p align="justify">
-  
+No entanto, a ausência de tratamento específico para números negativos nos resultados representa uma limitação para aplicações futuras que envolvam representação gráfica ou filtragem de imagens. Como perspectiva de melhoria, sugere-se esta correção, permitindo uma adaptação mais precisa a contextos como detecção de bordas com base em intensidade de pixels
+
+</p> 
+
+<p align="justify">
+Em suma, o projeto atendeu aos objetivos propostos, servindo como base para um futuro projeto envolvendo o desenvolvimento de  um programa em C, utilizando um filtro de detecção de borda em uma imagem para ser mostrada no monitor VGA.
 </p> 
