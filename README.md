@@ -79,15 +79,26 @@ A comunicação entre software e hardware ocorre por meio de chamadas de sistema
 ## Biblioteca Assembly
 
 <p align="justify">
-	
+A biblioteca Assembly desenvolvida tem como objetivo fornecer uma interface de comunicação entre o processador ARM (HPS) e o coprocessador de multiplicação matricial implementado no FPGA da plataforma DE1-SoC. Essa interface permite que o software em execução no ARM envie dados para o hardware, controle sua operação e receba os resultados processados.
 </p>
- 
-<p align="center">
-    <img src="" width="400"/>
-    <br/>
-    <b>Figura 4.</b> Legenda4. <b>Fonte:</b> .
 
-<p align="center"><b>Tabela 1.</b> Legenda. Fonte: Os autores.</p>
+<p align="justify">
+Ela foi implementada inteiramente em linguagem Assembly para arquitetura ARM, otimizando tanto o acesso direto à memória mapeada do FPGA quanto o controle dos sinais de handshaking (sincronização) necessários. Ela é composta por dois arquivos: header.c e assembly.s.
+</p>
+
+<p align="justify">
+O arquivo header.h é o cabeçalho em C, que define as estruturas, constantes e protótipos das funções da biblioteca. Já o arquivo assembly.s possui a implementação das seguintes funções em assembly:
+</p>
+
+ | Função        | Descrição                                                                                                                                                                       |
+|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `begin_hw()`   | Inicializa o acesso ao hardware: abre `/dev/mem`, faz o mapeamento da região LW Bridge e configura ponteiros para os registradores de entrada e saída da FPGA. Retorna `HW_SUCCESS` ou `HW_INIT_FAIL`. |
+| `end_hw()`     | Finaliza o acesso ao hardware, desfaz o mapeamento e fecha o descritor de arquivo.                                                                                             |
+| `send_data(p)` | Envia os parâmetros para o coprocessador, incluindo os dados das matrizes, opcode, tamanho e escalar. Gera os pulsos de reset e start, além de realizar a sincronização de envio dos dados. |
+| `read_results()`| Realiza a leitura dos resultados processados pela FPGA. Além dos dados, captura também um sinal de overflow caso tenha ocorrido.                                              |
+
+
+<p align="center"><b>Tabela 1.</b> Funções em Assembly. Fonte: Os autores.</p>
 
 ## Preparação do Ambiente de Desenvolvimento
 
