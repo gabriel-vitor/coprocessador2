@@ -22,21 +22,27 @@ Dando continuidade a esse desenvolvimento, o presente trabalho tem como objetivo
 ## Arquitetura do Sistema
 
 <p align="justify">
-	
+A comunicação entre o Hardware (FPGA) e o Software (HPS - Hard Processor System) ocorre por meio de uma interface de barramento disponibilizada no sistema embarcado, especificamente através dos barramentos HPS-to-FPGA (H2F) e FPGA-to-HPS (F2H). Esta interface permite a troca de dados entre o coprocessador de multiplicação matricial e o processador ARM que executa o sistema Linux.
+</p>
+
+<p align="justify">
+A respeito dos componentes Principais da Arquitetura, o processador ARM (HPS) executa o Linux, controla a aplicação e chama rotinas da biblioteca Assembly que interagem com o coprocessador. O coprocessador de multiplicação matricial, implementado na FPGA, é formado pela Unidade de Controle, que gerencia o fluxo de dados e sinais, e pela Interface de Dados, que comunica com o ARM via sinais DATA_IN e DATA_OUT.
+</p>
+
+<p align="justify">
+A comunicação entre FPGA e HPS ocorre por sinais configurados na plataforma Qsys/Platform Designer do software Quartus II Prime Lite Edition: data_in_external_connection_export e data_out_external_connection_export. O sistema inclui detectores de borda para sinais de reset (frio, quente e debug) e o clock principal de 50 MHz (CLOCK_50).
+</p>
+
+<p align="justify">
+A respeito do fluxo de funcionamento, o processador ARM executa uma aplicação Linux que utiliza uma biblioteca em Assembly desenvolvida para o projeto. Essa biblioteca envia comandos e dados para a FPGA por meio da interface de comunicação chamada DATA_IN.
+</p>
+
+<p align="justify">
+Dentro da FPGA, a Unidade de Controle recebe esses dados, realiza o processamento necessário e executa a multiplicação matricial. Após o cálculo, os resultados são disponibilizados na linha DATA_OUT. Em suma, o processador ARM lê os resultados enviados pela FPGA e continua o processamento da aplicação.
 </p>
 
 <p align="justify">
 	
-</p>
-
-<p align="justify">
-	
-</p>
-
-<p align="center">
-    <img src="" width="600"/>
-    <br/>
-    <b>Figura 1.</b> Legenda. <b>Fonte:</b> .
 </p>
 
 ## Hardware Utilizados
