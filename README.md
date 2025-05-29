@@ -109,19 +109,31 @@ O arquivo header.h é o cabeçalho em C, que define as estruturas, constantes e 
 ### Descrição de Instalação
 
 <p align="justify">
+É necessário utilizar o sistema operacional Linux, de qualquer distribuição. Para a instalação do **Quartus II Prime Lite Edition**, siga as seguintes etapas:
 
+- Acesse o site oficial da Intel FPGA: [https://fpgasoftware.intel.com/](https://fpgasoftware.intel.com/)
+- Selecione a versão desejada.
+- Escolha **"Quartus Prime Lite Edition (Linux)"**.
+- Baixe o instalador `.tar` ou `.run`.
 </p>
 
 ### Configuração de Ambiente
 
 <p align="justify">
+Após clonar o repositório, abra um projeto no Quartus através da opção **"Open Project"** e selecione o arquivo `soc_system.qpf`.
 
+Em seguida, compile o projeto e envie para a placa **DE1-SoC** através da opção **"Programmer"**.
 </p>
 
 ### Execução
 
 <p align="justify">
+Existe um arquivo `Makefile` no projeto, onde será possível compilar de uma forma mais rápida. Utilize os seguintes comandos no terminal Linux para executar:
 
+```bash
+sudo make
+sudo make run
+```
 </p>
 
 ## Testes de Funcionamento do Sistema
