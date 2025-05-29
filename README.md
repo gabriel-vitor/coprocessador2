@@ -120,7 +120,7 @@ O arquivo header.h é o cabeçalho em C, que define as estruturas, constantes e 
 ### Configuração de Ambiente
 
 <p align="justify">
-Após clonar o repositório, abra um projeto no Quartus através da opção **"Open Project"** e selecione o arquivo `soc_system.qpf`.
+Após clonar o repositório, abra um projeto no Quartus através da opção **Open Project** e selecione o arquivo `soc_system.qpf`.
 
 Em seguida, compile o projeto e envie para a placa **DE1-SoC** através da opção **"Programmer"**.
 </p>
