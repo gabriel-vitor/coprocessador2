@@ -41,9 +41,6 @@ A respeito do fluxo de funcionamento, o processador ARM executa uma aplicação 
 Dentro da FPGA, a Unidade de Controle recebe esses dados, realiza o processamento necessário e executa a multiplicação matricial. Após o cálculo, os resultados são disponibilizados na linha DATA_OUT. Em suma, o processador ARM lê os resultados enviados pela FPGA e continua o processamento da aplicação.
 </p>
 
-<p align="justify">
-	
-</p>
 
 ## Hardwares Utilizados
 
@@ -70,11 +67,6 @@ O desenvolvimento do hardware é realizado com as ferramentas Intel Quartus II P
 A comunicação entre software e hardware ocorre por meio de chamadas de sistema Linux (open, mmap2, close e munmap) para mapear os registradores da FPGA. O driver /dev/mem permite o acesso direto à memória física. Para controle de versão e gerenciamento do código, utiliza-se Git, com os repositórios hospedados no GitHub.
 </p>
 
-<p align="center">
-    <img src="" width="600"/>
-    <br/>
-    <b>Figura 2.</b> Lgenda2. <b>Fonte:</b> .
-</p>
 
 ## Biblioteca Assembly
 
@@ -150,23 +142,52 @@ sudo make run
 ## Testes de Funcionamento do Sistema
 
 <p align="justify">
-
+Os testes de funcionamento foram realizados por meio de um programa principal desenvolvido em linguagem C. Esse programa conta com um menu interativo em loop, que permite ao usuário selecionar diferentes operações aritméticas (como multiplicação, soma e subtração) e definir o tamanho das matrizes utilizadas. As operações são realizadas pelo coprocessador escrito em Verilog na FPGA, e por isso retornam rapidamente. Foram testadas todas as combinações de operação e tamanhos de matrizes, limitadas de 2x2 até 5x5.
 </p> 
-
 
 <p align="justify">
-
+Os elementos das matrizes A e B são preenchidos diretamente no código-fonte em C, bem como o valor de escalar, evitando a necessidade de entrada manual e permitindo testes mais rápidos e padronizados. Os testes incluem também a verificação da ocorrência de overflow, com a biblioteca sendo capaz de identificar quando os resultados ultrapassam o limite de representação da lógica utilizada. Dessa forma, foi possível validar o correto funcionamento do sistema em diferentes cenários, assegurando que a comunicação entre o processador ARM e a FPGA ocorre conforme esperado.
 </p> 
+
+<p align="center">
+    <img src="images/teste1.png" width="600"/>
+    <br/>
+    <b>Figura 1.</b> Testagem do menu interativo do código em C. <b>Fonte:</b> Os autores.
+</p>
+
+<p align="center">
+    <img src="images/teste2.png" width="600"/>
+    <br/>
+    <b>Figura 2.</b> Testagem com matrizes 5x5 com multiplicador escalar pré-definido em 2. <b>Fonte:</b> Os autores.
+</p>
+
+<p align="center">
+    <img src="images/teste3.png" width="600"/>
+    <br/>
+    <b>Figura 3.</b> Testagem com matrizes 5x5 e multiplicação entre matrizes pré-definidas. <b>Fonte:</b> Os autores.
+</p>
 
 ## Análise dos Resultados
 
 <p align="justify">
-  
+Os resultados obtidos nos testes foram positivos e atenderam plenamente aos requisitos propostos para o sistema. O desempenho observado durante a execução das operações demonstrou que a utilização da FPGA proporciona uma aceleração significativa no processamento, especialmente em operações com matrizes maiores. A integração entre o código Assembly, a aplicação em C e o hardware da FPGA mostrou-se eficiente e confiável.
 </p> 
 
 <p align="justify">
-
+Entretanto, observou-se que não há um tratamento específico para números negativos nos resultados. A matriz exibe corretamente valores negativos quando ocorrem, no entanto, em um projeto futuro que envolve representação gráfica em escala de cinza, como filtros detectores de borda, é recomendável que tais valores sejam tratados para retornar o valor mínimo da escala (como zero). Isso se deve ao fato de que, em contextos gráficos, valores negativos podem ser interpretados como zero, representando a cor preta. Portanto, esse ajuste poderá melhorar a fidelidade visual e a consistência dos resultados em aplicações visuais.
 </p> 
+
+<p align="center">
+    <img src="images/teste4.png" width="600"/>
+    <br/>
+    <b>Figura 4.</b> Exibição de matriz oposta que mostra valores negativos. <b>Fonte:</b> Os autores.
+</p>
+
+<p align="center">
+    <img src="images/teste5.png" width="600"/>
+    <br/>
+    <b>Figura 5.</b> Matriz com resultados negativos ao modificar o escalar no código-fonte (valor em 100). Há overflow. <b>Fonte:</b> Os autores.
+</p>
 
 ## Conclusão
 <p align="justify"> 
