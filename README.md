@@ -42,7 +42,7 @@ Dentro da FPGA, a Unidade de Controle recebe esses dados, realiza o processament
 </p>
 
 <p align="center">
-    <img src="images/image1.jpeg" width="600"/>
+    <img src="images/image1.jpeg" width="400"/>
     <br/>
     <b>Figura 1.</b> Representação do fluxo. <b>Fonte:</b> Os autores.
 </p>
