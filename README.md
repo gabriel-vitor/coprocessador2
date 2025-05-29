@@ -63,7 +63,7 @@ O sistema operacional Linux embarcado é executado no processador HPS da DE1-SoC
 </p>
 
 <p align="justify">
-O desenvolvimento do hardware é realizado com as ferramentas Intel Quartus II Prime Lite Edition e Platform Designer, que permitem a síntese dos circuitos e a conexão dos módulos FPGA ao HPS. A compilação do software conta com o compilador GCC para ARM (arm-linux-gnueabihf-gcc), o montador GNU Assembler e a ferramenta Make, que automatiza o processo de compilação.	
+O desenvolvimento do hardware é realizado com as ferramentas Intel Quartus II Prime Lite Edition e Platform Designer, que permitem a síntese dos circuitos e a conexão dos módulos FPGA ao HPS. A compilação do software conta com o compilador GCC para ARM, o montador GNU Assembler e a ferramenta Make, que automatiza o processo de compilação.	
 </p>
 
 <p align="justify">
