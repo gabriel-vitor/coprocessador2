@@ -8,11 +8,15 @@
 ## Introdução
 
 <p align="justify">
-	
+Atualmente, diversas áreas da computação, como visão computacional, aprendizado de máquina, criptografia e simulações científicas, demandam grande capacidade de processamento, especialmente em operações envolvendo multiplicação de matrizes. A utilização de coprocessadores dedicados se apresenta como uma solução eficiente para acelerar essas operações, proporcionando melhorias significativas em desempenho e eficiência energética.
 </p>
 
 <p align="justify">
-	
+Neste contexto, foi desenvolvido anteriormente um coprocessador especializado na multiplicação matricial utilizando a plataforma DE1-SoC, que combina um processador ARM com um FPGA. Esse coprocessador visa atender aplicações que exigem alto desempenho em operações matriciais.	
+</p>
+
+<p align="justify">
+Dando continuidade a esse desenvolvimento, o presente trabalho tem como objetivo a criação de uma biblioteca em linguagem Assembly para arquitetura ARM, que permite a interação eficiente entre o processador e o coprocessador implementado no FPGA. A biblioteca abstrai detalhes de baixo nível, facilitando a utilização das funções de multiplicação matricial por outras aplicações de software.
 </p>
 
 ## Arquitetura do Sistema
