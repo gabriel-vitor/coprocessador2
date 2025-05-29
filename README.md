@@ -45,17 +45,16 @@ Dentro da FPGA, a Unidade de Controle recebe esses dados, realiza o processament
 	
 </p>
 
-## Hardware Utilizados
+## Hardwares Utilizados
 
 <p align="justify">
-	 
+O projeto utilizou a plataforma DE1-SoC da Terasic, composta por um FPGA Altera Cyclone V e um processador ARM Cortex-A9 dual-core. O FPGA possui 110 mil elementos lógicos e memória SDRAM dedicada, enquanto o processador conta com 1 GB de DDR3 e roda Linux embarcado. 
 </p>
 
 <p align="justify">
-	
+A placa dispõe de interfaces como GPIOs, LEDs, switches, displays de 7 segmentos, HDMI, VGA, USB, Ethernet e UART. A comunicação entre o processador e o FPGA é feita pelo barramento Lightweight HPS-to-FPGA bridge, que permite acesso direto aos registradores da FPGA via endereços de memória. O clock principal do FPGA é de 50 MHz, e o sistema utiliza cartão MicroSD para boot do Linux e armazenamento de dados.
 </p>
 
-<p align="center"><b>Tabela 1.</b> Legenda. Fonte: Os autores.</p>
 
 ## Software Utilizados
 
@@ -91,6 +90,7 @@ Dentro da FPGA, a Unidade de Controle recebe esses dados, realiza o processament
     <br/>
     <b>Figura 4.</b> Legenda4. <b>Fonte:</b> .
 
+<p align="center"><b>Tabela 1.</b> Legenda. Fonte: Os autores.</p>
 
 ## Preparação do Ambiente de Desenvolvimento
 
