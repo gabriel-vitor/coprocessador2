@@ -100,6 +100,14 @@ O arquivo header.h é o cabeçalho em C, que define as estruturas, constantes e 
 
 <p align="center"><b>Tabela 1.</b> Funções em Assembly. Fonte: Os autores.</p>
 
+<p align="justify">
+O projeto também inclui o arquivo main.c, que tem como objetivo realizar a comunicação entre o HPS e o FPGA. Ele permite que operações matemáticas sobre matrizes sejam processadas diretamente no hardware. É composto por um menu com as operações de soma, subtração, multiplicação de matrizes, multiplicação por escalar, transposição e geração da matriz oposta, sendo que há uma operação marcada explicitamente como não recomendada, que é o cálculo do determinante, pois não está funcionando corretamente.
+</p>
+
+<p align="justify">
+O programa inicia estabelecendo a comunicação com a FPGA, através da função begin_hw(), que prepara os ponteiros e o acesso à memória do hardware. Em seguida, dentro de um laço principal, ele apresenta o menu de operações e solicita que o usuário informe tanto o código da operação quanto o tamanho da matriz desejada. Esses dados passam por uma validação para garantir que estejam dentro dos limites suportados pelo hardware.
+</p>
+
 ## Preparação do Ambiente de Desenvolvimento
 
 <p align="justify">
