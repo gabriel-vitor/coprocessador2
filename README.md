@@ -100,13 +100,16 @@ O arquivo header.h é o cabeçalho em C, que define as estruturas, constantes e 
 
 <p align="center"><b>Tabela 1.</b> Funções em Assembly. Fonte: Os autores.</p>
 
+### Código em C
 <p align="justify">
-O projeto também inclui o arquivo "main.c", que tem como objetivo realizar a comunicação entre o HPS e o FPGA. Ele permite que operações matemáticas sobre matrizes sejam processadas diretamente no hardware. É composto por um menu com as operações de soma, subtração, multiplicação de matrizes, multiplicação por escalar, transposição e geração da matriz oposta, sendo que há uma operação marcada explicitamente como não recomendada, que é o cálculo do determinante, pois não está funcionando corretamente.
+O código desenvolvido em linguagem C - main.c - tem como objetivo servir de interface entre o usuário e o coprocessador implementado na FPGA, permitindo a execução de diversas operações aritméticas entre matrizes. Através de um menu interativo exibido no terminal, o usuário pode selecionar a operação desejada e a ordem da matriz (variando de 2x2 até 5x5). As matrizes A e B são pré-definidas no código para facilitar os testes, mas há possibilidade de mudanças na implementação para permitir entradas dinâmicas.
 </p>
 
 <p align="justify">
-O programa inicia estabelecendo a comunicação com a FPGA, através da função begin_hw(), que prepara os ponteiros e o acesso à memória do hardware. Em seguida, dentro de um laço principal, ele apresenta o menu de operações e solicita que o usuário informe tanto o código da operação quanto o tamanho da matriz desejada. Esses dados passam por uma validação para garantir que estejam dentro dos limites suportados pelo hardware.
+O programa realiza validações dos parâmetros inseridos utilizando a função validate_operation(), garantindo que apenas códigos de operação e tamanhos válidos sejam processados. Em seguida, os dados são empacotados em uma estrutura Params e enviados para a FPGA por meio da função send_data(). Após o processamento no hardware, a função read_results() é responsável por recuperar os dados processados e verificar a ocorrência de overflow. Para exibição dos resultados, o código implementa a função print_matrix(), que organiza visualmente as matrizes no terminal, com alinhamento e delimitação por colunas e linhas. Por fim, o código gerencia toda a inicialização e finalização da comunicação com o hardware através das funções begin_hw() e end_hw(), respectivamente. O menu contém um loop que permite a realização de múltiplas operações de forma contínua, sem a necessidade de inicializar o acesso ao hardware toda vez que for realizar uma operação.
+
 </p>
+
 
 ## Preparação do Ambiente de Desenvolvimento
 
